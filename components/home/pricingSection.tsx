@@ -5,7 +5,7 @@ import React from 'react';
 
 const PricingSection: React.FC = () => {
     return (
-        <section className="px-4 md:px-0">
+        <section id="pricing" className="px-4 md:px-0">
         <div className="max-w-4xl mx-auto border-t border-white/10 pt-16 text-center">
           <h2 className="text-3xl md:text-4xl font-semibold mb-4">
             Prices tailored just for you

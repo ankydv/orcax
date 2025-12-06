@@ -3,7 +3,7 @@ import React from 'react';
 
 export const ServicesSection = () => {
     return (
-        <section className="px-4 md:px-0">
+        <section className="px-4 md:px-0" id="services">
         <div className="max-w-5xl mx-auto border-t border-white/10 pt-16">
           <h2 className="text-3xl md:text-4xl font-semibold mb-8 text-center">
             We can help you with…

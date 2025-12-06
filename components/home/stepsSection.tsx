@@ -7,7 +7,7 @@ interface StepsSectionProps {
 
 const StepsSection: React.FC<StepsSectionProps> = ({}) => {
   return (
-    <section className="px-4 md:px-0">
+    <section className="px-4 md:px-0" id="process">
       <div className="max-w-5xl mx-auto border-t border-white/10 pt-16">
         <h2 className="text-3xl md:text-4xl font-semibold mb-10 text-center">
           How we get you more business

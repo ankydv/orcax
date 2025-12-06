@@ -66,6 +66,41 @@ export const TwitterIcon: React.FC<IconSvgProps> = ({
   );
 };
 
+export const InstagramIcon: React.FC<IconSvgProps> = ({
+  size = 24,
+  width,
+  height,
+  ...props
+}) => (
+  <svg
+    height={size || height}
+    viewBox="0 0 24 24"
+    width={size || width}
+    {...props}
+  >
+    <rect
+      x="2"
+      y="2"
+      width="20"
+      height="20"
+      rx="5"
+      ry="5"
+      stroke="currentColor"
+      fill="none"
+      strokeWidth="1.5"
+    />
+    <circle
+      cx="12"
+      cy="12"
+      r="3.5"
+      stroke="currentColor"
+      fill="none"
+      strokeWidth="1.5"
+    />
+    <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" />
+  </svg>
+);
+
 export const GithubIcon: React.FC<IconSvgProps> = ({
   size = 24,
   width,
