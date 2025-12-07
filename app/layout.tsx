@@ -8,6 +8,7 @@ import { Providers } from "./providers";
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import { Navbar } from "@/components/navbar";
+import { getSiteSettings } from "@/sanity/lib/utils";
 
 export const metadata: Metadata = {
   title: {
@@ -27,11 +28,13 @@ export const viewport: Viewport = {
   ],
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+
+   const settings = await getSiteSettings()
   return (
     <html suppressHydrationWarning lang="en">
       <head />
@@ -43,19 +46,12 @@ export default function RootLayout({
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <div className="relative flex flex-col h-screen">
-            <Navbar />
+            <Navbar logoUrl={settings?.logoUrl} />
             <main className="container max-w-screen mx-auto pt-16 px-6 flex-grow bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
               {children}
             </main>
             <footer className="w-full flex items-center justify-center py-3">
-              <Link
-                isExternal
-                className="flex items-center gap-1 text-current"
-                href="https://heroui.com?utm_source=next-app-template"
-                title="heroui.com homepage"
-              >
-                <span className="text-default-600">OrcaXMedia</span>
-              </Link>
+              <span className="text-default-600">{settings?.copyrightText || "OrcaXMedia"}</span>
             </footer>
           </div>
         </Providers>

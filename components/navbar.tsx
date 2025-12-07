@@ -23,8 +23,9 @@ import {
   InstagramIcon,
 } from "@/components/icons";
 import { link as linkStyles } from "@heroui/theme";
+import Image from "next/image";
 
-export const Navbar = () => {
+export const Navbar = ({logoUrl}: {logoUrl: string}) => {
   return (
     <HeroUINavbar
       maxWidth="xl"
@@ -38,7 +39,13 @@ export const Navbar = () => {
             className="flex items-center gap-2 text-inherit"
             href="/"
           >
-            <Logo />
+            <Image
+              src={logoUrl}
+              alt="Site logo"
+              width={40}
+              height={40}
+              className="h-10 w-10"
+            />
             <p className="font-semibold tracking-tight">OrcaX Media</p>
           </NextLink>
         </NavbarBrand>
